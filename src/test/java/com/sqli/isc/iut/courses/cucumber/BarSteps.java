@@ -6,28 +6,37 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class BarSteps {
-    @Given("Mr Pignon and Mr Leblanc go to the bar Le Juste")
-    public void mrPignonAndMrLeblancGoToTheBarLeJuste() {
+
+    private Bar bar;
+
+    @Given("there are only {int} seats in the bar")
+    public void thereAreOnlySeatsInTheBar(int arg0) {
+        this.bar = new Bar("Le Juste", arg0);
     }
 
-    @And("there are only {int} seats in the bar")
-    public void thereAreOnlySeatsInTheBar(int arg0) {
+    @And("Mr Pignon and Mr Leblanc go to the bar Le Juste")
+    public void mrPignonAndMrLeblancGoToTheBarLeJuste() {
+        this.bar.enter(2);
     }
 
     @Given("there are already {int} people in the bar")
     public void thereAreAlreadyPeopleInTheBar(int arg0) {
+        this.bar.setCurrentPeople(arg0);
     }
 
-    @When("Mr Pignon and Mr Leblanc arrive at the bar")
-    public void mrPignonAndMrLeblancArriveAtTheBar() {
+    @Then("they are denied")
+    public void theyAreDenied() {
+        assert (this.bar.getCurrentPeople() >= this.bar.getCapacity());
     }
 
-    @Then("they are denied entry because the bar is full")
-    public void theyAreDeniedEntryBecauseTheBarIsFull() {
+    @And("the bar display {string}")
+    public void theBarDisplay(String arg0) {
+        assert (this.bar.isComplete().equals(arg0));
     }
 
     @Then("the person behind them cannot enter because the bar is full")
     public void thePersonBehindThemCannotEnterBecauseTheBarIsFull() {
+
     }
 
     @And("they each order a cocktail of the month for €{int}")
@@ -53,4 +62,6 @@ public class BarSteps {
     @And("Mr Pignon is happy because they only had one drink")
     public void mrPignonIsHappyBecauseTheyOnlyHadOneDrink() {
     }
+
+
 }
