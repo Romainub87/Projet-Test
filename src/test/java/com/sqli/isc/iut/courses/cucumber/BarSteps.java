@@ -52,13 +52,15 @@ public class BarSteps {
     public void theyEachOrderACocktailOfTheMonthFor(int arg0) {
         this.Pignon.orderCocktails(1, arg0);
         this.Leblanc.orderCocktails(1, arg0);
+        this.bar.addToBill(this.Pignon, this.Pignon.getBill());
+        this.bar.addToBill(this.Leblanc, this.Leblanc.getBill());
     }
 
     @And("Mr Leblanc pays for all the cocktails")
     public void mrLeblancPaysForAllTheCocktails() {
-        this.Leblanc.addToBill((int) this.Pignon.getBill());
-        this.Pignon.setBill(0 );
-        this.bar.addToBill(this.Leblanc, (int) this.Leblanc.getBill());
+        this.Leblanc.addToBill(this.Pignon.getBill());
+        this.Pignon.setBill(0);
+        this.bar.addToBill(this.Leblanc, this.Leblanc.getBill());
     }
 
     @When("they finish their drinks")
@@ -82,17 +84,12 @@ public class BarSteps {
         assert (this.Pignon.isHappy(this.Pignon.getNumberOfDrinks()));
     }
 
-
     @When("Mr Pignon and Mr Leblanc arrive at the bar")
     public void mrPignonAndMrLeblancArriveAtTheBar() {
         this.Pignon = new Man("Pignon");
         this.Leblanc = new Man("Leblanc");
-
         this.bar.enter(2);
     }
-
-
-    
 
     @Then("Mr Pignon pays")
     public void mrPignonPays() {
@@ -103,11 +100,14 @@ public class BarSteps {
 
     @Then("Mr Leblanc order {int} cocktails for him own bill")
     public void mrLeblancOrderCocktailsForHimOwnBill(int arg0) {
-        this.Leblanc.orderCocktails(arg0, 20);
+        this.Leblanc.orderCocktails(arg0, 10);
+        this.bar.addToBill(this.Leblanc, this.Leblanc.getBill());
     }
 
     @And("Mr Leblanc checked his bill")
     public void mrLeblancCheckedHisBill() {
+        System.out.println(this.Leblanc.getBill());
+        System.out.println(this.bar.getBillForOneMan(this.Leblanc));
         assert (this.bar.getBillForOneMan(this.Leblanc) == this.Leblanc.getBill());
     }
 

@@ -20,7 +20,7 @@ public class Man {
         return numberOfDrinks;
     }
 
-    public double getBill() {
+    public int getBill() {
         return bill;
     }
 
@@ -36,7 +36,7 @@ public class Man {
         this.numberOfDrinks += numberOfDrinks;
     }
 
-    public void orderCocktails(int numberOfCocktails, double pricePerCocktail) {
+    public void orderCocktails(int numberOfCocktails, int pricePerCocktail) {
         bill += numberOfCocktails * pricePerCocktail;
     }
 

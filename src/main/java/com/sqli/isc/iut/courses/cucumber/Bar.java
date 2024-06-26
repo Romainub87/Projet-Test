@@ -53,17 +53,12 @@ public class Bar {
         }
     }
 
-    public double getBillForOneMan(Man man) {
+    public int getBillForOneMan(Man man) {
         return billTab.get(man);
     }
 
     public void addToBill(Man man, int amount) {
-        if (billTab.containsKey(man)) {
-            int currentAmount = amount + this.billTab.get(man);
-            this.billTab.put(man, currentAmount);
-        } else {
-            this.billTab.put(man, amount);
-        }
+        this.billTab.put(man, amount);
     }
 }
 
