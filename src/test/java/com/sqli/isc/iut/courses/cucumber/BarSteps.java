@@ -57,8 +57,8 @@ public class BarSteps {
     @And("Mr Leblanc pays for all the cocktails")
     public void mrLeblancPaysForAllTheCocktails() {
         this.Leblanc.addToBill(this.Pignon.getBill());
-        this.Pignon.setBill(0.0);
-        this.bar.addToBill(this.Leblanc.getBill());
+        this.Pignon.setBill(0);
+        this.bar.addToBill(this.Leblanc, this.Leblanc.getBill());
     }
 
     @When("they finish their drinks")
@@ -69,7 +69,7 @@ public class BarSteps {
 
     @Then("the bill is checked")
     public void theBillIsChecked() {
-        assert (this.bar.getBill() == this.Leblanc.getBill());
+        assert (this.bar.getBillForOneMan(this.Leblanc) == this.Leblanc.getBill());
     }
 
     @And("Mr Leblanc pays the bill")
@@ -83,4 +83,31 @@ public class BarSteps {
     }
 
 
+    @When("Mr Pignon and Mr Leblanc arrive at the bar")
+    public void mrPignonAndMrLeblancArriveAtTheBar() {
+    }
+
+    @Then("Mr Pignon pays")
+    public void mrPignonPays() {
+    }
+
+    @When("Mr Leblanc insists for another cocktail of month")
+    public void mrLeblancInsistsForAnotherCocktailOfMonth() {
+    }
+
+    @Then("Mr Leblanc order {int} cocktails for him own bill")
+    public void mrLeblancOrderCocktailsForHimOwnBill(int arg0) {
+    }
+
+    @And("Mr Leblanc checked his bill")
+    public void mrLeblancCheckedHisBill() {
+    }
+
+    @And("Mr Leblanc pays")
+    public void mrLeblancPays() {
+    }
+
+    @And("Mr Pignon is sad because he had more than one drink")
+    public void mrPignonIsSadBecauseHeHadMoreThanOneDrink() {
+    }
 }

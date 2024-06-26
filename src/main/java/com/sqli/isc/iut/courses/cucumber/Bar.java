@@ -1,16 +1,19 @@
 package com.sqli.isc.iut.courses.cucumber;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Bar {
     private String name;
     private int capacity;
     private int currentPeople;
-    private double bill;
+    private Map<Man, Integer> billTab;
 
     public Bar(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
         this.currentPeople = 0;
-        this.bill = 0.0;
+        this.billTab = new HashMap<>();
     }
 
     public String getName() {
@@ -45,12 +48,17 @@ public class Bar {
         }
     }
 
-    public double getBill() {
-        return bill;
+    public int getBillForOneMan(Man man) {
+        return billTab.get(man);
     }
 
-    public void addToBill(double amount) {
-        bill += amount;
+    public void addToBill(Man man, int amount) {
+        if (billTab.containsKey(man)) {
+            int currentAmount = amount + this.billTab.get(man);
+            this.billTab.put(man, currentAmount);
+        } else {
+            this.billTab.put(man, amount);
+        }
     }
 }
 

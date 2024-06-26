@@ -4,12 +4,12 @@ public class Man {
 
     private String name;
     private int numberOfDrinks;
-    private double bill;
+    private int bill;
 
     public Man(String name) {
         this.name = name;
         this.numberOfDrinks = 0;
-        this.bill = 0.0;
+        this.bill = 0;
     }
 
     public String getName() {
@@ -20,15 +20,15 @@ public class Man {
         return numberOfDrinks;
     }
 
-    public double getBill() {
+    public int getBill() {
         return bill;
     }
 
-    public void addToBill(double amount) {
+    public void addToBill(int amount) {
         bill += amount;
     }
 
-    public void setBill(double amount) {
+    public void setBill(int amount) {
         bill = amount;
     }
 
@@ -36,12 +36,12 @@ public class Man {
         this.numberOfDrinks += numberOfDrinks;
     }
 
-    public void orderCocktails(int numberOfCocktails, double pricePerCocktail) {
+    public void orderCocktails(int numberOfCocktails, int pricePerCocktail) {
         bill += numberOfCocktails * pricePerCocktail;
     }
 
     public void payBill() {
-        bill = 0.0;
+        bill = 0;
     }
 
     public boolean isHappy(int numberOfDrinks) {
