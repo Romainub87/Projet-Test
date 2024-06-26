@@ -92,11 +92,7 @@ public class BarSteps {
     }
 
 
-    @When("they finish their drinks")
-    public void theyFinishTheirDrinks2() {
-        this.Pignon.drink(1);
-        this.Leblanc.drink(1);
-    }
+    
 
     @Then("Mr Pignon pays")
     public void mrPignonPays() {
