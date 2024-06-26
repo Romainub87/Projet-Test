@@ -10,7 +10,7 @@ public class Bar {
     private int capacity;
     private int currentPeople;
     private Map<Man, Integer> billTab;
-     
+   
 
     public Bar(String name, int capacity) {
         this.name = name;

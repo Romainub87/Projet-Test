@@ -30,7 +30,6 @@ Feature: Visit to the bar Le Juste
     When they finish their drinks
     And the bill is checked
     Then Mr Pignon pays 
-    When Mr Leblanc insists for another cocktail of month
     Then Mr Leblanc order 2 cocktails for him own bill
     And they finish their drinks
     And Mr Leblanc checked his bill 
