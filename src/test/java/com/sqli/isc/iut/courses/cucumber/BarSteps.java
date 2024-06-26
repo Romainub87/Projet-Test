@@ -83,4 +83,31 @@ public class BarSteps {
     }
 
 
+    @When("Mr Pignon and Mr Leblanc arrive at the bar")
+    public void mrPignonAndMrLeblancArriveAtTheBar() {
+    }
+
+    @Then("Mr Pignon pays")
+    public void mrPignonPays() {
+    }
+
+    @When("Mr Leblanc insists for another cocktail of month")
+    public void mrLeblancInsistsForAnotherCocktailOfMonth() {
+    }
+
+    @Then("Mr Leblanc order {int} cocktails for him own bill")
+    public void mrLeblancOrderCocktailsForHimOwnBill(int arg0) {
+    }
+
+    @And("Mr Leblanc checked his bill")
+    public void mrLeblancCheckedHisBill() {
+    }
+
+    @And("Mr Leblanc pays")
+    public void mrLeblancPays() {
+    }
+
+    @And("Mr Pignon is sad because he had more than one drink")
+    public void mrPignonIsSadBecauseHeHadMoreThanOneDrink() {
+    }
 }
