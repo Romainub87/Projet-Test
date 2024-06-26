@@ -62,9 +62,7 @@ public class BarSteps {
     public void theyEachOrderACocktailOfTheMonthFor(int arg0) {
         this.Pignon.orderCocktails(1, arg0);
         this.Leblanc.orderCocktails(1, arg0);
-    public void theyEachOrderACocktailOfTheMonthFor(int arg0) {
-        this.Pignon.orderCocktails(1, arg0);
-        this.Leblanc.orderCocktails(1, arg0);
+    
     }
 
     @And("Mr Leblanc pays for all the cocktails")
