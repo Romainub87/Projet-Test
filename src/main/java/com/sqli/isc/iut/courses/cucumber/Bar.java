@@ -3,16 +3,21 @@ package com.sqli.isc.iut.courses.cucumber;
 import java.util.HashMap;
 import java.util.Map;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Bar {
     private String name;
     private int capacity;
     private int currentPeople;
+    private Map<Man, Integer> billTab;
     private Map<Man, Integer> billTab;
 
     public Bar(String name, int capacity) {
         this.name = name;
         this.capacity = capacity;
         this.currentPeople = 0;
+        this.billTab = new HashMap<>();
         this.billTab = new HashMap<>();
     }
 
@@ -34,6 +39,10 @@ public class Bar {
 
     public void enter(int peopleCount) {
         this.currentPeople += peopleCount;
+    }
+
+    public void suppressPeople(int peopleCount) {
+        this.currentPeople -= peopleCount;
     }
 
     public void suppressPeople(int peopleCount) {

@@ -22,6 +22,7 @@ Feature: Visit to the bar Le Juste
     And Mr Leblanc pays the bill
     And Mr Pignon is happy because they only had one drink
 
+
  Scenario: Ordering their own cocktails and checking the bill
     Given there are already 3 people in the bar
     When  Mr Pignon and Mr Leblanc arrive at the bar
@@ -31,6 +32,7 @@ Feature: Visit to the bar Le Juste
     Then Mr Pignon pays 
     When Mr Leblanc insists for another cocktail of month
     Then Mr Leblanc order 2 cocktails for him own bill
+    And they finish their drinks
     And Mr Leblanc checked his bill 
     And Mr Leblanc pays 
     And Mr Pignon is sad because he had more than one drink
