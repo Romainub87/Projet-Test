@@ -32,6 +32,7 @@ Feature: Visit to the bar Le Juste
     Then Mr Pignon pays 
     When Mr Leblanc insists for another cocktail of month
     Then Mr Leblanc order 2 cocktails for him own bill
+    And they finish their drinks
     And Mr Leblanc checked his bill 
     And Mr Leblanc pays 
     And Mr Pignon is sad because he had more than one drink
