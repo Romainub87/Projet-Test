@@ -58,7 +58,7 @@ public class BarSteps {
     public void mrLeblancPaysForAllTheCocktails() {
         this.Leblanc.addToBill(this.Pignon.getBill());
         this.Pignon.setBill(0.0);
-        this.bar.addToBill(this.Leblanc.getBill());
+        this.bar.addToBill(this.Leblanc, (int) this.Leblanc.getBill());
     }
 
     @When("they finish their drinks")
@@ -69,7 +69,7 @@ public class BarSteps {
 
     @Then("the bill is checked")
     public void theBillIsChecked() {
-        assert (this.bar.getBill() == this.Leblanc.getBill());
+        assert (this.bar.getBillForOneMan(this.Leblanc) == this.Leblanc.getBill());
     }
 
     @And("Mr Leblanc pays the bill")
