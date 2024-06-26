@@ -29,12 +29,12 @@ public class Bar {
         this.currentPeople = currentPeople;
     }
 
-    public double getBill() {
-        return bill;
-    }
-
     public void enter(int peopleCount) {
         this.currentPeople += peopleCount;
+    }
+
+    public void suppressPeople(int peopleCount) {
+        this.currentPeople -= peopleCount;
     }
 
     public String isComplete() {
@@ -45,12 +45,12 @@ public class Bar {
         }
     }
 
-    public void orderCocktails(int numberOfCocktails, double pricePerCocktail) {
-        bill += numberOfCocktails * pricePerCocktail;
+    public double getBill() {
+        return bill;
     }
 
-    public void payBill() {
-        bill = 0.0;
+    public void addToBill(double amount) {
+        bill += amount;
     }
 }
 
